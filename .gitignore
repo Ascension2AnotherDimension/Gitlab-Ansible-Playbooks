@@ -1,0 +1,15 @@
+# Ignore Ansible logs and configuration files
+*.log
+*.pyc
+*.pyo
+
+# Ignore Python virtual environment folders
+venv/
+.env/
+
+# Ignore Ansible configuration files (if you have any local config)
+ansible.cfg
+
+# Ignore sensitive data files
+*.json
+*.yml
