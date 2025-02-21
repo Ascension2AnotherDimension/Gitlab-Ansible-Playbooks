@@ -1,0 +1,4 @@
+---
+# Variables for web servers
+web_server_port: 80
+web_server_user: webadmin
