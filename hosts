@@ -1,0 +1,24 @@
+# Ansible Hosts File
+# Grouped web servers and databases
+
+# Group: Web Servers
+[web_servers]
+webserver1.example.com
+webserver2.example.com
+
+# Group: Database Servers
+[db_servers]
+dbserver1.example.com
+dbserver2.example.com
+
+# Group Variables for Web Servers
+[web_servers:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=/path/to/private/key
+ansible_python_interpreter=/usr/bin/python3
+
+# Group Variables for DB Servers
+[db_servers:vars]
+ansible_user=root
+ansible_ssh_private_key_file=/path/to/private/key
+ansible_python_interpreter=/usr/bin/python3
