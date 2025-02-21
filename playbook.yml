@@ -1,0 +1,24 @@
+---
+- name: Ansible Playbook for GitLab and AWS(no credentials)
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Install necessary dependencies for AWS CLI
+      become: yes
+      apt:
+        name: awscli
+        state: present
+
+    - name: Create a new S3 bucket
+      aws_s3:
+        bucket: "your-bucket-name"
+        region: "us-east-1"
+        mode: create
+        permission: private
+
+    - name: Clone GitLab repository
+      git:
+        repo: 'https://gitlab.com/your-repo-url'
+        dest: '/home/user/repo'
+        version: 'main'
